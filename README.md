@@ -1,0 +1,1 @@
+# junior-software-devloper-6-8-
