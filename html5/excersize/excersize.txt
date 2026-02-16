@@ -1,0 +1,12 @@
+write a program of html5 which have 10 audio tags  with thier 
+titles .
+
+write a program of html5 which have 15 video tags in one 
+page.and also make one next and previous button and divide 
+them into two section of 7-8 videos.
+
+make one regestration form of shadi.com.
+
+make one table in which use detail and summary tag(cricketer detail) .
+
+make one page website which have images ,list of the receipe and also thier rlated content of the receipe(like this:-south indian :idli,dosa,uttapam)
