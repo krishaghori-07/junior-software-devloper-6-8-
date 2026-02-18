@@ -9,4 +9,9 @@ make one regestration form of shadi.com.
 
 make one table in which use detail and summary tag(cricketer detail) .
 
+
 make one page website which have images ,list of the receipe and also thier rlated content of the receipe(like this:-south indian :idli,dosa,uttapam)
+
+make one page with the help of figure and figcaption tag which include the 5 images.
+ 
+ make one web page with attractive background effect which must include the autofocus,autocomplete,min-max and multiple attributes.
