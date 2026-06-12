@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 bg-light shadow">
+                <h1>4th way to create object</h1>
+            </div>
+            <div class="col-12 bg-light vh-100 shadow">
+                <form onsubmit="return addplayer();">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">
+                            Name
+                        </label>
+                        <input type="text" id="name" name="name" class="form-control" required>
+                        <div class="invalid-feedback">
+                            Name is required
+                        </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="runs" class="form-label">Runs</label>
+                            <input type="number" id="runs" name="runs" class="form-control" min="0" step="1" required>
+                            <div class="invalid-feedback">Enter rns (0 or more)</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="balls" class="form-label">Balls</label>
+                            <input type="number" id="balls" name="balls" class="form-control" min="1" step="1" required>
+                            <div class="invalid-feedback">Enter balls faced(at least 1)</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="fours" class="form-label">Fours</label>
+                            <input type="number" id="fours" name="fours" class="form-control" min="0" step="1" required>
+                            <div class="invalid-feedback">Enter number of fours(0 or more).</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="sixes" class="form-label">Sixes</label>
+                            <input type="number" id="sixes" name="sixes" class="form-control" min="0" step="1" required>
+                            <div class="invalid-feedback">Enter number of sixes(0 or more).</div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                                Submit
+                        </button>
+                        </form>
+            </div>
+            <div class="col-lg-10 p-3">
+                <div class="row" id="team">
+
+                </div>
+            </div>
+        </div>
+    </div>  
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script>
+        function addplayer()
+        {
+            //create variable to store input
+            var name=document.getElementById('name').value;
+            var runs=document.getElementById('runs').value;
+            var balls=document.getElementById('balls').value;
+            var fours=document.getElementById('fours').value;
+            var sixes=document.getElementById('sixes').value;
+            //now create object using class
+            //var object =new class(value)
+            var p1=new player(name,runs,balls,fours,sixes);
+            p1.add();
+            return false;
+        }
+        class player{
+            //create property variable inside constructor
+            constructor(name,runs,balls,fours,sixes){
+                this.name=name;
+                this.runs=runs;
+                this.balls=balls;
+                this.fours=fours;
+                this.sixes=sixes;
+            }
+            add()
+            {
+                console.log(this);
+            let card=`
+            <div class="col-lg-3">
+                <div class="card-shadow">
+                    <div class="card-header text-bg-primary">
+                        <h3>${this.name}</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><b>runs</b>${this.runs}</li>
+                            <li class="list-group-item"><b>balls</b>${this.balls}</li>
+                            <li class="list-group-item"><b>fours</b>${this.fours}</li>
+                            <li class="list-group-item"><b>sixes</b>${this.sixes}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div> `;
+            document.getElementById('team').innerHTML+=card; 
+            }
+        }
+    </script>
+
+</body>
+</html>
